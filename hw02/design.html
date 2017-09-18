@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	  <meta charset="utf-8">
+	</head>
+	<h1>User-First Design: User Stories</h1>
+
+	<h3>As a user, I should be able to create a tweet.</h3>
+	<p>To create a tweet, Bob clicks on the new tweet button on his home page. It takes him to a form where he
+	can type out a tweet. Clicking the submit button on that page will create a new tweet from Bob.</p>
+
+	<h3>As a user, I should be able to follow a different user.</h3>
+	<p>To follow a user, Alice clicks on Bob's name which is linked to Bob's user page. Alice clicks the follow button, and she is then following Bob. </p>
+
+	<h3>As a user, I should be able to delete a tweet.</h3>
+	<p>To delete a tweet, Bob clicks on the tweet he wishes to delete on his user page. This brings him to a page with the single tweet and both an edit and delete button. He clicks on the delete button, and after confirmation alert which he accepts, the tweet is deleted.</p>
+
+	<h3>As a user, I should be able to like a tweet.</h3>
+	<p>On Alice's homepage, each tweet has a like button under the message of the tweet. Alice clicks on the like button, and the tweets number of likes is incremented by one.</p>
+
+	<h3>As a new user, I should be able to make an account</h3>
+	<p>As a first time visitor to the website, Bob clicks the create account button on the homepage of the web app. This brings him to the new user page where he is presented a form with fields for name, email, and password. Bob fills in this information, and he clicks create an account, to create a new account. </p>
+
+	<h1>Data-First Design: Resources</h1>
+	<h2>Users</h2>
+	<ul>
+		<li>Name</li>
+		<li>Email</li>
+		<li>Password</li>
+		<li>Has many Tweets</li>
+		<li>Has many Follows</li>
+	</ul>
+
+	<h4>RESTful Routes</h4>
+	<ul>
+		<li><b>Index:</b> Displays a list of all users. </li>
+		<li><b>Show:</b> Displays a specific user.</li>
+		<li><b>Edit:</b> Displays a password-protected page with a form to edit a user. Must be logged in as that user to access page.  </li>
+		<li><b>New:</b> Displays a form to create a new user. </li>
+		<li><b>Create:</b> Displays show page with the newly created user and a message.  </li>
+		<li><b>Update:</b> Displays show page with the newly updated user and a message.</li>
+		<li><b>Delete:</b> Displays index page with the newly deleted user removed and a message.</li>
+	</ul>
+
+	<h2>Follows</h2>
+	<ul>
+		<li>Reference to a user (follower)</li>
+		<li>Reference to a user (followee)</li>
+	</ul>
+	<p>Constraints: follower can't be a followee, and followees are unique.</p>
+	<h4>RESTful Routes</h4>
+	<ul>
+		<li><b>Index:</b> Displays a list of all users a single user follows.</li>
+		<li><b>Create:</b> Displays show page with the newly added followee and a message.  </li>
+		<li><b>Delete:</b> Displays index page with the newly deleted followee removed and a message.</li>
+	</ul>
+	<p>*Note: Other routes will not be needed for Follows. All other actions are contained on other pages.</p>
+
+	<h2>Tweets</h2>
+	<ul>
+		<li>Reference to a User</li>
+		<li>Message</li>
+		<li>Date</li>
+		<li>Likes</li>
+		<li>Hashtags</li>
+		<li>Mentions</li>
+	</ul>
+
+	<h4>RESTful Routes</h4>
+	<ul>
+		<li><b>Index:</b> Displays a list of all tweets from a single user.</li>
+		<li><b>Show:</b> Displays a specific tweet from a single user.</li>
+		<li><b>Edit:</b> Displays a form to edit a tweet. </li>
+		<li><b>New:</b> Displays a form to create a new tweet. </li>
+		<li><b>Create:</b> Displays show page with the newly created tweet and a message.  </li>
+		<li><b>Update:</b> Displays show page with the newly updated tweet and a message.</li>
+		<li><b>Delete:</b> Displays index page with the newly deleted tweet removed and a message.</li>
+	</ul>
+
+
+
+</html>
